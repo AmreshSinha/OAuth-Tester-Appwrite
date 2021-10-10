@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# 🔖 Appwrite OAuth Tester With React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A OAuth Tester app built with Appwrite and React to test OAuth Providers in Appwrite
 
-## Available Scripts
+<!-- If you simply want to try out the App, go ahead and check out the demo at https://appwrite-todo-with-react.vercel.app -->
 
-In the project directory, you can run:
 
-### `yarn start`
+## 🎬 Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 🤘 Install Appwrite 
+Follow this simple [Installation Guide](https://appwrite.io/docs/installation) to get Appwrite up and running in no time. You can either deploy Appwrite on your local machine or, on any cloud provider of your choice. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> Note: If you setup Appwrite on your local machine, you will need to create a public IP so that your hosted frontend can access it.
+  
+We need to make a few configuration changes to your Appwrite server. 
 
-### `yarn test`
+1. Clone and Create a ```.env``` in root of this project with the following vars:
+    * REACT_APP_ENDPOINT - Your Appwrite endpoint
+    * REACT_APP_PROJECT - Your Appwrite project ID
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Add a new Web App in Appwrite and enter the endpoint of your website (`localhost, <project-name>.vercel.app etc`)
+![Create Web App](https://user-images.githubusercontent.com/20852629/113019434-3c27c900-919f-11eb-997c-1da5a8303ceb.png)
 
-### `yarn build`
+3. Open ```/src/pages/Login``` directory and make a new file ```loginWith<Your-Provider-Name>.js```
+    * Fill this content inside the file:
+        ```
+        import api from "../../api/api";
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+        export const loginWith<Your-Provider-Name> = async () => {
+            try {
+              await api.loginWith<Your-Provider-Name>();
+            } catch(error) {
+              console.log(error.message);
+            }
+        }
+        ```
+    * Remember to replace ```<Your-Provider-Name>``` with a valid Provider (which is available in appwrite) in camelCase
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Open ```Login.js``` in the same directory and add this after Line 7:
+    * ```import { loginWith<Your-Provider-Name> } from './loginWith<Your-Provider-Name>';```
+    * Add a button after Line 18 (You can take help from examples already written there) like:
+        ```
+        <button
+          type="submit"
+          className="mx-auto mt-4 py-2 px-16 font-semibold rounded-lg shadow-md bg-white text-gray-900 border border-gray-900 hover:border-transparent hover:text-white hover:bg-gray-900 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Your-Provider-Name
+        </button>
+        ```
+    * Remember to replace ```<Your-Provider-Name>``` with a valid Provider (which is available in appwrite) in camelCase
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🚀 Deploy the Front End
+**Fork it and make necessary changes first**
 
-### `yarn eject`
+You have two options to deploy the front-end and we will cover both of them here. In either case, you will need to fill in these environment variables that help your frontend connect to Appwrite.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* REACT_APP_ENDPOINT - Your Appwrite endpoint
+* REACT_APP_PROJECT - Your Appwrite project ID
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **Deploy to a Static Hosting Provider**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Use the following buttons to deploy to your favourite hosting provider in one click! We support Vercel, Netlify and DigitalOcean. You will need to enter the environment variables above when prompted.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FAmreshSinha%2FOAuth-Tester-Appwrite&env=REACT_APP_PROJECT,REACT_APP_ENDPOINT&envDescription=Your%20Appwrite%20Endpoint%2C%20Project%20ID%20)
 
-## Learn More
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/AmreshSinha/OAuth-Tester-Appwrite)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/AmreshSinha/OAuth-Tester-Appwrite/tree/master)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### **Run locally**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Follow these instructions to run the demo app locally
 
-### Analyzing the Bundle Size
+```sh
+$ git clone https://github.com/appwrite/todo-with-react
+$ cd todo-with-react
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Run the following command to generate your `.env` vars
 
-### Making a Progressive Web App
+```sh
+$ cp .env.example .env
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Now fill in the envrionment variables we discussed above in your `.env`
 
-### Advanced Configuration
+Now run the following commands and you should be good to go 💪🏼
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+$ npm install
+$ npm start
+```
 
-### Deployment
+## 🤕 Support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you get stuck anywhere, hop onto one of our [support channels in discord](https://appwrite.io/discord) and we'd be delighted to help you out 🤝

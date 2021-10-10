@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
+import Profile from "./pages/Profile/Profile";
+import Login from "./pages/Login/Login";
+import Landing from "./pages/Landing/Landing";
+import { useGetUser } from "./hooks";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [{ user }, dispatch] = useGetUser();
+
+return(
+  <BrowserRouter>
+    <Switch>
+      <Route path="/profile">
+        {user ? <Profile user={user} dispatch={dispatch} /> : <Redirect to="/login" />}
+      </Route>
+      <Route path="/login">
+        {user ? <Redirect to="/profile" /> : <Login dispatch={dispatch}/>}
+      </Route>
+      <Route exact path="/">
+        <Landing />
+      </Route>
+      <Redirect to="/" />
+    </Switch>
+  </BrowserRouter>
+)
+
 }
 
 export default App;

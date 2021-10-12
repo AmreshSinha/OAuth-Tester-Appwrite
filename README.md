@@ -7,7 +7,7 @@ A OAuth Tester app built with Appwrite and React to test OAuth Providers in Appw
 
 ## 🎬 Getting Started
 
-### 🤘 Install Appwrite 
+### 🤘 Installation
 Follow this simple [Installation Guide](https://appwrite.io/docs/installation) to get Appwrite up and running in no time. You can either deploy Appwrite on your local machine or, on any cloud provider of your choice. 
 
 > Note: If you setup Appwrite on your local machine, you will need to create a public IP so that your hosted frontend can access it.
@@ -48,6 +48,7 @@ We need to make a few configuration changes to your Appwrite server.
         </button>
         ```
     * Remember to replace ```<Your-Provider-Name>``` with a valid Provider (which is available in appwrite) in camelCase
+5. Run Dev Server ```npm run start```
 
 ### 🚀 Deploy the Front End
 **Fork it and make necessary changes first**

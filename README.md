@@ -2,7 +2,7 @@
 
 <img width="18%" align="right" src="https://appwrite.io/images-ee/press/badge-pink-button.svg" />
 
-A OAuth Tester app built with Appwrite and React to test OAuth Providers in Appwrite
+A OAuth Tester app built with Appwrite and React to test OAuth Providers in Appwrite. Made to test new providers easily.
 
 <!-- If you simply want to try out the App, go ahead and check out the demo at https://appwrite-todo-with-react.vercel.app -->
 

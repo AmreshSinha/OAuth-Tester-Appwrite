@@ -104,4 +104,4 @@ All Styling is copied from React Todo Repository of Appwrite. (as I am too lazy 
 
 ## 🤕 Support
 
-If you get stuck anywhere, hop onto appwrite's [support channels in discord](https://appwrite.io/discord) and we'd be delighted to help you out 🤝
+If you get stuck anywhere, hop onto appwrite's [support channels in discord](https://appwrite.io/discord) to seek help 🤝

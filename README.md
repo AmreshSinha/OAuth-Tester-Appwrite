@@ -4,9 +4,6 @@
 
 A OAuth Tester app built with Appwrite and React to test OAuth Providers in Appwrite. Made to test new providers easily.
 
-<!-- If you simply want to try out the App, go ahead and check out the demo at https://appwrite-todo-with-react.vercel.app -->
-
-
 ## 🎬 Getting Started
 
 ### 🤘 Installation

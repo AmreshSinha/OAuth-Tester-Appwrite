@@ -92,6 +92,10 @@ $ npm install
 $ npm start
 ```
 
+## 📸 Screenshots
+![image](https://user-images.githubusercontent.com/35039730/136904800-b66b8e31-3350-41ef-89e5-d66593dc78d2.png)
+![image](https://user-images.githubusercontent.com/35039730/136904613-c7a7c360-01f0-4b97-98fb-494ac52c5b79.png)
+
 ## 📝 Note
 All Styling is copied from React Todo Repository of Appwrite. (as I am too lazy :/)
 

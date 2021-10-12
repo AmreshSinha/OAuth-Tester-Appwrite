@@ -73,22 +73,16 @@ Use the following buttons to deploy to your favourite hosting provider in one cl
 
 ### **Run locally**
 
-Follow these instructions to run the demo app locally
+* Follow these instructions to run the demo app locally
 
 ```sh
 $ git clone https://github.com/appwrite/todo-with-react
 $ cd todo-with-react
 ```
 
-Run the following command to generate your `.env` vars
+* Make .env file by following 1st step in Installation and fill in the required vars
 
-```sh
-$ cp .env.example .env
-```
-
-Now fill in the envrionment variables we discussed above in your `.env`
-
-Now run the following commands and you should be good to go 💪🏼
+* Now run the following commands and you should be good to go 💪🏼
 
 ```
 $ npm install

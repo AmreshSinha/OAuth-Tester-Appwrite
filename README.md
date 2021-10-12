@@ -1,4 +1,4 @@
-# 🔖 Appwrite OAuth Tester With React
+<h1> 🔖 Appwrite OAuth Tester With React<a href="#-note">*</a></h1>
 
 <img width="18%" align="right" src="https://appwrite.io/images-ee/press/badge-pink-button.svg" />
 

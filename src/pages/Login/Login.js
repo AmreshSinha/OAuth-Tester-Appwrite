@@ -1,16 +1,27 @@
 import { useState } from "react";
 import api from "../../api/api";
-import { appwrite, apple, bitbucket, discord, facebook, google, github, twitch, twitter, vk, yahoo, zendesk, react, tradeshift } from "../icons";
-
-
+import {
+  appwrite,
+  apple,
+  bitbucket,
+  discord,
+  facebook,
+  google,
+  github,
+  twitch,
+  twitter,
+  vk,
+  yahoo,
+  zendesk,
+  react,
+  tradeshift,
+} from "../icons";
+import { loginWithDiscord } from "./loginWithDiscord";
 
 // Your OAuth Provider Functions
-import { loginWithZendesk } from './loginWithZendesk';
-
-
+import { loginWithZendesk } from "./loginWithZendesk";
 
 const Login = ({ dispatch }) => {
-
   return (
     <section className="container h-screen mx-auto flex">
       <div className="flex-grow flex flex-col max-w-md mx-auto p-6 items-center justify-center">
@@ -25,8 +36,9 @@ const Login = ({ dispatch }) => {
         <button
           type="submit"
           className="mx-auto mt-4 py-2 px-16 font-semibold rounded-lg shadow-md bg-white text-gray-900 border border-gray-900 hover:border-transparent hover:text-white hover:bg-gray-900 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+          onClick={loginWithDiscord}
         >
-        {discord(12)}
+          {discord(12)}
         </button>
         {/* <button
           type="submit"

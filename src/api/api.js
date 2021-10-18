@@ -26,6 +26,18 @@ let api = {
     }
   },
 
+  loginWithDiscord: async () => {
+    try {
+      await api.provider().account.createOAuth2Session(
+        "discord",
+        "http://localhost:3000/login",
+        "http://localhost:3000/login"
+      );
+    } catch (error) {
+      throw error;
+    }
+  },
+
   createAccount: (email, password, name) => {
     return api.provider().account.create(email, password, name);
   },

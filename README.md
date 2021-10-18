@@ -20,33 +20,18 @@ We need to make a few configuration changes to your Appwrite server.
 2. Add a new Web App in Appwrite and enter the endpoint of your website (`localhost, <project-name>.vercel.app etc`)
 ![Create Web App](https://user-images.githubusercontent.com/20852629/113019434-3c27c900-919f-11eb-997c-1da5a8303ceb.png)
 
-3. Open ```/src/pages/Login``` directory and make a new file ```loginWith<Your-Provider-Name>.js```
-    * Fill this content inside the file:
-        ```
-        import api from "../../api/api";
-
-        export const loginWith<Your-Provider-Name> = async () => {
-            try {
-              await api.loginWith<Your-Provider-Name>();
-            } catch(error) {
-              console.log(error.message);
-            }
-        }
-        ```
-    * Remember to replace ```<Your-Provider-Name>``` with a valid Provider (which is available in appwrite) in camelCase
-
 4. Open ```Login.js``` in the same directory and add this after Line 7:
-    * ```import { loginWith<Your-Provider-Name> } from './loginWith<Your-Provider-Name>';```
     * Add a button after Line 18 (You can take help from examples already written there) like:
         ```
         <button
           type="submit"
           className="mx-auto mt-4 py-2 px-16 font-semibold rounded-lg shadow-md bg-white text-gray-900 border border-gray-900 hover:border-transparent hover:text-white hover:bg-gray-900 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+          onClick={() => {loginWith(`provider-name`)}}
         >
           Your-Provider-Name
         </button>
         ```
-    * Remember to replace ```<Your-Provider-Name>``` with a valid Provider (which is available in appwrite) in camelCase
+    * Remember to replace ```provider-name``` with a valid Provider (which is available in appwrite) in small casings (e.g. ```discord```)
 5. Run Dev Server ```npm run start```
 
 ### 🚀 Deploy the Front End

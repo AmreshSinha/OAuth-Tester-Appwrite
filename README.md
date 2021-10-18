@@ -16,6 +16,7 @@ We need to make a few configuration changes to your Appwrite server.
 1. Clone and Create a ```.env``` in root of this project with the following vars:
     * REACT_APP_ENDPOINT - Your Appwrite endpoint
     * REACT_APP_PROJECT - Your Appwrite project ID
+    * REACT_APP_LOGINURL - Login Page URL of OAuth Tester (e.g. http://localhost:3000/login)
 
 2. Add a new Web App in Appwrite and enter the endpoint of your website (`localhost, <project-name>.vercel.app etc`)
 ![Create Web App](https://user-images.githubusercontent.com/20852629/113019434-3c27c900-919f-11eb-997c-1da5a8303ceb.png)
@@ -41,6 +42,7 @@ You have two options to deploy the front-end and we will cover both of them here
 
 * REACT_APP_ENDPOINT - Your Appwrite endpoint
 * REACT_APP_PROJECT - Your Appwrite project ID
+* REACT_APP_LOGINURL - Login Page URL of OAuth Tester (e.g. http://localhost:3000/login)
 
 ### **Deploy to a Static Hosting Provider**
 

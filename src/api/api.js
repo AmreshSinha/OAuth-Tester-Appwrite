@@ -30,8 +30,8 @@ let api = {
     try {
       await api.provider().account.createOAuth2Session(
         provider,
-        "http://localhost:3000/login",
-        "http://localhost:3000/login"
+        Server.loginurl,
+        Server.loginurl
       );
     } catch (error) {
       throw error;

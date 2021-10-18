@@ -26,10 +26,10 @@ let api = {
     }
   },
 
-  loginWithDiscord: async () => {
+  loginWith: async (provider) => {
     try {
       await api.provider().account.createOAuth2Session(
-        "discord",
+        provider,
         "http://localhost:3000/login",
         "http://localhost:3000/login"
       );

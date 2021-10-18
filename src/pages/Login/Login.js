@@ -16,10 +16,9 @@ import {
   react,
   tradeshift,
 } from "../icons";
-import { loginWithDiscord } from "./loginWithDiscord";
 
 // Your OAuth Provider Functions
-import { loginWithZendesk } from "./loginWithZendesk";
+import { loginWith } from "./loginWith";
 
 const Login = ({ dispatch }) => {
   return (
@@ -30,13 +29,7 @@ const Login = ({ dispatch }) => {
         <button
           type="submit"
           className="mx-auto mt-4 py-2 px-16 font-semibold rounded-lg shadow-md bg-white text-gray-900 border border-gray-900 hover:border-transparent hover:text-white hover:bg-gray-900 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {vk(12)}
-        </button>
-        <button
-          type="submit"
-          className="mx-auto mt-4 py-2 px-16 font-semibold rounded-lg shadow-md bg-white text-gray-900 border border-gray-900 hover:border-transparent hover:text-white hover:bg-gray-900 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
-          onClick={loginWithDiscord}
+          onClick={() => {loginWith(`discord`)}}
         >
           {discord(12)}
         </button>
@@ -67,7 +60,7 @@ const Login = ({ dispatch }) => {
         <button
           type="submit"
           className="mx-auto mt-4 py-2 px-16 font-semibold rounded-lg shadow-md bg-white text-gray-900 border border-gray-900 hover:border-transparent hover:text-white hover:bg-gray-900 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
-          onClick={loginWithZendesk}
+          onClick={() => {loginWith(`zendesk`)}}
         >
           {zendesk(12)}
         </button>

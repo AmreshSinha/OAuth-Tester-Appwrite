@@ -1,8 +1,8 @@
 import api from "../../api/api";
 
-export const loginWithZendesk = async () => {
+export const loginWith = async (provider) => {
     try {
-      await api.loginWithZendesk();
+      await api.loginWith(provider);
     } catch(error) {
       console.log(error.message);
     }
